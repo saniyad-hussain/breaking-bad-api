@@ -11,9 +11,9 @@ export default function Cards(props) {
             <div class="card" >
                 <img src={actor.img} class="card-img-top" alt="..."/>
                 <div class="card-body">
-                <h5 class="card-title">{actor.name}</h5>
+                {/* <h5 class="card-title" style={{ color: '#ffc414', fontWeight: 'bold'}}>{actor.name}</h5> */}
                 <Link to={`/details/${actor.char_id}`}>
-                    Details
+                    <button className="btn btn-success">Details</button>
                 </Link>
                 </div>
             </div>

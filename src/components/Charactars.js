@@ -8,11 +8,18 @@ export default function Charactars() {
        .then(res => res.json())
        .then(data => setActors(data))
     }, [])
+
+    const [searchCast, setSearchCast] = useState('')
+    const filterCast = actors.filter( ac => {
+        return ac.name.toLowerCase().includes( searchCast.toLowerCase())
+    }) 
+
     return (
         <div className="container">
             <div className="row">
+                <input type="text" placeholder="Search" onChange= { e => setSearchCast(e.target.value)} />
                 {
-                    actors.map(actor=> <Cards actor={actor}></Cards>)
+                    filterCast.map(actor=> <Cards actor={actor}></Cards>)
                 }
 
             </div>
