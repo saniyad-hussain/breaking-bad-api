@@ -16,8 +16,10 @@ export default function Charactars() {
 
     return (
         <div className="container">
-            <div className="row">
+            <div className="p-3">
                 <input type="text" placeholder="Search" onChange= { e => setSearchCast(e.target.value)} />
+            </div>
+            <div className="row">
                 {
                     filterCast.map(actor=> <Cards actor={actor}></Cards>)
                 }
